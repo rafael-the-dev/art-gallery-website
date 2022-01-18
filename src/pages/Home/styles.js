@@ -40,6 +40,10 @@ export const useStyles = makeStyles(theme => ({
         fontWeight: '900 !important',
         [theme.breakpoints.up('sm')]: {
             fontSize: '2.5rem !important'
+        },
+        [theme.breakpoints.up('sm')]: {
+            left: -224,
+            top: '15%'
         }
     },
     heroContentButtonText: {

@@ -15,8 +15,15 @@ const Home = () => {
        <>
             <section className={classNames(display.alignStretch, display.flex, display.flexColumn, display.w100,
                 responsive.smRow, responsive.smAlignCenter, classes.hero)}>
-                <div className={classNames(bg.cover, bg.center, classes.heroImageContainer)}></div>
-                <div className={classNames(classes.heroContent)}>
+                <div className={classNames(bg.cover, bg.center, classes.heroImageContainer, display.relative)}>
+                    <Hidden mdDown>
+                        <Typography component="h1" variant="h3" className={classNames(classes.heroContentTitle, 
+                            text.uppercase, text.textLight, display.absolute)}>
+                            Modern<br/>art gal<span className={classNames(text.textDark)}>lery</span>
+                        </Typography>
+                    </Hidden>
+                </div>
+                <div className={classNames(classes.heroContent, display.relative)}>
                     <Hidden mdUp>
                         <Typography component="h1" variant="h3" className={classNames(classes.heroContentTitle, text.uppercase)}>
                             Modern<br/>art gallery
