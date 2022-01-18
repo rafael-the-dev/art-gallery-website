@@ -183,15 +183,11 @@ export const useDisplay = makeStyles(theme => ({
         paddingRight: '3rem !important'
     },
     px: {
-        paddingLeft: '5% !important',
-        paddingRight: '5% !important',
-        [theme.breakpoints.up('sm')]: {
-            paddingLeft: '5% !important',
-            paddingRight: '5% !important',
-        },
-        [theme.breakpoints.up('md')]: {
-            paddingLeft: '10% !important',
-            paddingRight: '10% !important',
+        paddingLeft: '5%',
+        paddingRight: '5%',
+        [theme.breakpoints.up(1000)]: {
+            paddingLeft: '10%',
+            paddingRight: '10%',
         }
     },
     relative: {
