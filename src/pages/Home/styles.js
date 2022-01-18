@@ -54,5 +54,36 @@ export const useStyles = makeStyles(theme => ({
     heroContentButtonIcon: {
         backgroundColor: '#D5966C',
         padding: '.95rem .95rem'
+    },
+    px: {
+        paddingLeft: '5%',
+        paddingRight: '5%',
+        [theme.breakpoints.up(1000)]: {
+            paddingLeft: '10%',
+            paddingRight: '10%',
+        }
+    },
+    dayAtGallery: {
+        [theme.breakpoints.up('sm')]: {
+            display: 'flex',
+            flexDirection: 'row-reverse'
+        }
+    },
+    galleryImageContainer: {
+        [theme.breakpoints.up('sm')]: {
+            height: 400,
+            width: '55%'
+        }
+    },
+    dayAtGalleryContent: {
+        [theme.breakpoints.up('sm')]: {
+            maxWidth: '40%'
+        }
+    },
+    dayAtGalleryTitle: {
+        fontWeight: '900 !important',
+        [theme.breakpoints.up('sm')]: {
+            fontSize: '1.9rem !important'
+        }
     }
 }));
