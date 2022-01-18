@@ -85,5 +85,15 @@ export const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('sm')]: {
             fontSize: '1.9rem !important'
         }
+    },
+    grid: {
+        display: 'grid',
+        gridRowGap: 30,
+        gridTemplateColumns: '100%',
+        gridTemplateRows: '350px 250px 250px'
+    },
+    gridItem3: {
+        backgroundColor: '#000',
+        padding: '2rem 7%'
     }
 }));

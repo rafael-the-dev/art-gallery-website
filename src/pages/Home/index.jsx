@@ -4,8 +4,16 @@ import { useBackground, useDisplay, useResponsive, useTypography } from '../../s
 import { Hidden, Typography } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import yourDayAtGalleryImage from '../../assets/images/mobile/image-grid-1.jpg'
+import greetingImage1 from '../../assets/images/mobile/image-grid-2.jpg'
+import greetingImage2 from '../../assets/images/mobile/image-grid-3.jpg'
+
 import yourDayAtGalleryTabletImage from '../../assets/images/tablet/image-grid-1.jpg'
+import greetingTabletImage1 from '../../assets/images/tablet/image-grid-2.jpg'
+import greetingTabletImage2 from '../../assets/images/tablet/image-grid-3.jpg'
+
 import yourDayAtGalleryDesktopImage from '../../assets/images/desktop/image-grid-1.jpg'
+import greetingDesktopImage1 from '../../assets/images/desktop/image-grid-2.jpg'
+import greetingDesktopImage2 from '../../assets/images/desktop/image-grid-3.jpg'
 
 const Home = () => {
     const bg = useBackground();
@@ -88,6 +96,60 @@ const Home = () => {
                         Your Day<br/>at the Gallery
                     </Typography>
                     <Typography  className={classNames(text.rem9, display.mt1, 
+                        responsive.mdMt0)}>
+                        Wander through our distinct collections and find new insights about our artists. Dive into the details of their creative process.
+                    </Typography>
+                </div>
+            </section>
+            <section className={classNames(classes.px, classes.grid, display.mb3)}>
+                <Hidden smUp>
+                    <Image 
+                        alt=""
+                        containerClassName={classes.greetingImageContainer1}
+                        image={greetingImage1}
+                    />
+                </Hidden>
+                <Hidden smDown mdUp>
+                    <Image 
+                        alt=""
+                        containerClassName={classes.greetingImageContainer1}
+                        image={greetingTabletImage1}
+                    />
+                </Hidden>
+                <Hidden mdDown>
+                    <Image 
+                        alt=""
+                        containerClassName={classes.greetingImageContainer1}
+                        image={greetingDesktopImage1}
+                    />
+                </Hidden>
+                <Hidden smUp>
+                    <Image 
+                        alt=""
+                        containerClassName={classes.greetingImageContainer2}
+                        image={greetingImage2}
+                    />
+                </Hidden>
+                <Hidden smDown mdUp>
+                    <Image 
+                        alt=""
+                        containerClassName={classes.greetingImageContainer2}
+                        image={greetingTabletImage2}
+                    />
+                </Hidden>
+                <Hidden mdDown>
+                    <Image 
+                        alt=""
+                        containerClassName={classes.greetingImageContainer2}
+                        image={greetingDesktopImage2}
+                    />
+                </Hidden>
+                <div className={classNames(classes.gridItem3, display.flex, display.flexColumn,
+                    display.justifyCenter)}>
+                    <Typography component="h2" variant="h5" className={classNames(classes.dayAtGalleryTitle, text.uppercase, text.textLight)}>
+                        Come &amp; be<br/>inspired
+                    </Typography>
+                    <Typography  className={classNames(text.textLight, text.rem9, display.mt1, display.opacity9,
                         responsive.mdMt0)}>
                         Wander through our distinct collections and find new insights about our artists. Dive into the details of their creative process.
                     </Typography>
