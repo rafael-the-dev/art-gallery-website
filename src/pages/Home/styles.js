@@ -42,7 +42,7 @@ export const useStyles = makeStyles(theme => ({
             fontSize: '2.5rem !important'
         },
         [theme.breakpoints.up('sm')]: {
-            left: -224,
+            left: '-30%',
             top: '15%'
         }
     },
@@ -90,10 +90,21 @@ export const useStyles = makeStyles(theme => ({
         display: 'grid',
         gridRowGap: 30,
         gridTemplateColumns: '100%',
-        gridTemplateRows: '350px 250px 250px'
+        gridTemplateRows: '350px 250px 250px',
+        [theme.breakpoints.up('sm')]: {
+            gridColumnGap: '2%',
+            gridTemplateColumns: '59% 39%',
+            gridTemplateRows: '250px 250px',
+        }
     },
     gridItem3: {
         backgroundColor: '#000',
         padding: '2rem 7%'
+    },
+    greetingImageContainer1: {
+        [theme.breakpoints.up('sm')]: {
+            gridColumn: '1 / span 1',
+            gridRow: '1 / span 2'
+        }
     }
 }));
