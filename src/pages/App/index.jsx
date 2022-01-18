@@ -5,7 +5,13 @@ import { AppContextProvider } from '../../context/AppContext';
 import loadable from '@loadable/component';
 
 const App = () => {
-    const theme = createTheme();
+    const theme = createTheme({
+        typography: {
+            /*fontFamily: "Big Shoulders Display"/*[
+                '"Abril Fatface"', 'cursive', '"Big Shoulders Display"', '"Big Shoulders Text"', '"Mochiy Pop P One"', 'sans-serif'
+            ].join(',')*/
+        }
+    });
     const HomePage = loadable(() => import(/* webpackChunkName: "HomePage" */ '../Home'));
 
     return (
