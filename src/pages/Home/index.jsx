@@ -1,24 +1,29 @@
 import classNames from 'classnames';
 import { useStyles } from './styles';
-import { useBackground, useDisplay, useTypography } from '../../styles'
-import { Typography } from '@mui/material';
+import { useBackground, useDisplay, useResponsive, useTypography } from '../../styles'
+import { Hidden, Typography } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Home = () => {
     const bg = useBackground();
     const classes = useStyles();
     const display = useDisplay();
+    const responsive = useResponsive();
     const text = useTypography();
 
     return (
        <>
-            <section className={classNames(display.alignStretch, display.flex, display.flexColumn, display.w100)}>
+            <section className={classNames(display.alignStretch, display.flex, display.flexColumn, display.w100,
+                responsive.smRow, responsive.smAlignCenter, classes.hero)}>
                 <div className={classNames(bg.cover, bg.center, classes.heroImageContainer)}></div>
                 <div className={classNames(classes.heroContent)}>
-                    <Typography component="h1" variant="h3" className={classNames(classes.heroContentTitle,)}>
-                        Modern<br/>art gallery
-                    </Typography>
-                    <Typography  className={classNames(classes.heroContentDescription, text.rem9, display.mt2)}>
+                    <Hidden mdUp>
+                        <Typography component="h1" variant="h3" className={classNames(classes.heroContentTitle, text.uppercase)}>
+                            Modern<br/>art gallery
+                        </Typography>
+                    </Hidden>
+                    <Typography  className={classNames(classes.heroContentDescription, text.rem9, display.mt2, 
+                        responsive.mdMt0)}>
                         The arts in the collection of the Modern Art Gallery all started from a spark of inspiration. Will these pieces inspire you? Visit us and find out.
                     </Typography>
                     <button className={classNames(classes.heroContentButton, display.flex, display.alignStretch,
