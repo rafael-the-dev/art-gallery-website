@@ -41,8 +41,9 @@ export const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('sm')]: {
             fontSize: '2.5rem !important'
         },
-        [theme.breakpoints.up('sm')]: {
-            left: '-30%',
+        [theme.breakpoints.up('md')]: {
+            left: 0,
+            transform: 'translate(-63%, 0)',
             top: '15%'
         }
     },
