@@ -2,9 +2,10 @@ import { makeStyles } from "@mui/styles";
 
 export const useStyles = makeStyles(theme => ({
     footer: {
+        backgroundColor: '#D5966C'
     },
     footerHomePage: {
-        backgroundColor: '#000'
+        backgroundColor: '#000 !important'
     },
     footerContent: {
         [theme.breakpoints.up('md')]: {

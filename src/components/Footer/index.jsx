@@ -22,7 +22,7 @@ const Footer = ({ isHomePage }) => {
                     variant="h4" 
                     component={Link} 
                     to="/" 
-                    className={classNames({[text.textLight]: isHomePage}, text.noUnderline, classes.footerTitle)}>
+                    className={classNames({[text.textLight]: isHomePage, [text.textDark]: !isHomePage}, text.noUnderline, classes.footerTitle)}>
                     Modern<br/>art gallery
                 </Typography>
                 <Typography className={classNames(text.rem9, display.mt1, display.opacity9, 
