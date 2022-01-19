@@ -12,6 +12,7 @@ const App = () => {
             ].join(',')*/
         }
     });
+    const LocationPage = loadable(() => import(/* webpackChunkName: "LocationPage" */ '../Location'));
     const HomePage = loadable(() => import(/* webpackChunkName: "HomePage" */ '../Home'));
 
     return (
@@ -21,6 +22,7 @@ const App = () => {
                     <AppContextProvider>
                         <Router>
                             <Routes>
+                                <Route exact path="/location" element={<LocationPage />} />
                                 <Route exact path="/" element={<HomePage />} />
                             </Routes>
                         </Router>
