@@ -3,11 +3,13 @@ import { useStyles } from './styles';
 import { useBackground, useDisplay, useResponsive, useTypography } from '../../styles'
 import { Typography } from '@mui/material';
 import Footer from '../../components/Footer';
-import * as leaflet from 'leaflet'
+//import * as leaflet from 'leaflet'
 import "leaflet/dist/leaflet.css"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Link } from 'react-router-dom'
+import { useCallback, useEffect } from 'react';
+import { useState } from 'react';
 
 
 const Location = () => {
@@ -16,22 +18,46 @@ const Location = () => {
     const display = useDisplay();
     const responsive = useResponsive();
     const text = useTypography();
+    const [ map, setMap ] = useState('');
+
+    const getMap = useCallback((geo) => {
+        return (
+            <MapContainer style={{ height: '100%', width: '100%' }} center={geo} zoom={13} scrollWheelZoom={false}>
+                <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={geo}>
+                    <Popup>
+                        A pretty CSS3 popup. <br /> Easily customizable.
+                    </Popup>
+                </Marker>
+            </MapContainer>
+        )
+    }, [])
+
+    const fetchUserLocation = useCallback(() => {
+        fetch('https://get.geojs.io/v1/ip/geo.json')
+            .then(res => res.json())
+            .then(data => {
+                setMap(getMap([parseFloat(data.latitude), parseFloat(data.longitude)]));
+            })
+            .catch(error => {
+                alert('Error while getting your location, refresh the page to try again');
+                setMap(getMap([41.490578, -71.310196]))
+                console.log(error);
+            });
+    }, [ getMap ])
+
+    useEffect(() => {
+        fetchUserLocation()
+    }, [ fetchUserLocation ])
 
     return (
         <>
             <main>
                 <div className={classNames(classes.mapContainer)}>
-                    <MapContainer style={{ height: '100%', width: '100%' }} center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-                        <TileLayer
-                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        />
-                        <Marker position={[51.505, -0.09]}>
-                            <Popup>
-                                A pretty CSS3 popup. <br /> Easily customizable.
-                            </Popup>
-                        </Marker>
-                    </MapContainer>
+                    { map }
                 </div>
                 <Link to="/" className={classNames(text.noUnderline, display.absolute, classes.backToHomeLink)}>
                     <button className={classNames(classes.heroContentButton, display.flex, display.alignStretch,
