@@ -6,6 +6,8 @@ import Footer from '../../components/Footer';
 import * as leaflet from 'leaflet'
 import "leaflet/dist/leaflet.css"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { Link } from 'react-router-dom'
 
 
 const Location = () => {
@@ -31,6 +33,18 @@ const Location = () => {
                         </Marker>
                     </MapContainer>
                 </div>
+                <Link to="/" className={classNames(text.noUnderline, display.absolute, classes.backToHomeLink)}>
+                    <button className={classNames(classes.heroContentButton, display.flex, display.alignStretch,
+                        display.outlineNone, display.borderNone, bg.transparent)}>
+                        <span className={classNames(classes.heroContentButtonIcon)}>
+                            <ArrowBackIosIcon className={classNames(text.textLight)} />
+                        </span>
+                        <span className={classNames(classes.heroContentButtonText, text.textLight, text.uppercase,
+                            display.flex, display.alignCenter)}>
+                            Back to home
+                        </span>
+                    </button>
+                </Link>
                 <section className={classNames(display.px, display.flex, display.flexColumn, classes.location,
                     responsive.smRow, display.justifyBetween, display.pb3, display.pt3)}>
                     <Typography component="h1" variant="h4"  className={classNames(classes.locationTitle, text.textLight)}>

@@ -3,7 +3,27 @@ import { makeStyles } from "@mui/styles";
 
 export const useStyles = makeStyles(theme => ({
     mapContainer: {
-        height: 450
+        height: 450,
+        [theme.breakpoints.up('sm')]: {
+            height: 400,
+        }
+    },
+    backToHomeLink: {
+        left: '5%',
+        top: 0,
+        zIndex: 1000,
+        [theme.breakpoints.up(1000)]: {
+            left: '10%',
+        }
+    },
+    heroContentButtonText: {
+        backgroundColor: '#000',
+        padding: '0.95rem 1.5rem',
+        fontSize: '1rem'
+    },
+    heroContentButtonIcon: {
+        backgroundColor: '#D5966C',
+        padding: '.95rem .95rem'
     },
     location: {
         backgroundColor: '#000'
@@ -12,7 +32,7 @@ export const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('sm')]: {
             maxWidth: '60%'
         },
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up('md')]: {
             maxWidth: '50%'
         }
     },
