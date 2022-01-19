@@ -12,17 +12,22 @@ export const useStyles = makeStyles(theme => ({
         left: '5%',
         top: 0,
         zIndex: 1000,
+        '&:hover': {
+            opacity: .8
+        },
         [theme.breakpoints.up(1000)]: {
             left: '10%',
         }
     },
     heroContentButtonText: {
         backgroundColor: '#000',
+        cursor: 'pointer',
         padding: '0.95rem 1.5rem',
         fontSize: '1rem'
     },
     heroContentButtonIcon: {
         backgroundColor: '#D5966C',
+        cursor: 'pointer',
         padding: '.95rem .95rem'
     },
     location: {

@@ -32,13 +32,13 @@ const Footer = ({ isHomePage }) => {
             </div>
             <ul className={classNames(display.flex, display.alignCenter, display.mt2, responsive.smMt0)}>
                 <li className={classNames(display.mr1)}>
-                    <FacebookIcon className={classNames({[text.textLight]: isHomePage})} />
+                    <FacebookIcon className={classNames({[text.textLight]: isHomePage}, classes.footerIcon)} />
                 </li>
                 <li className={classNames(display.mr1)}>
-                    <InstagramIcon className={classNames({[text.textLight]: isHomePage})} />
+                    <InstagramIcon className={classNames({[text.textLight]: isHomePage}, classes.footerIcon)} />
                 </li>
                 <li className={classNames()}>
-                    <TwitterIcon className={classNames({[text.textLight]: isHomePage})} />
+                    <TwitterIcon className={classNames({[text.textLight]: isHomePage}, classes.footerIcon)} />
                 </li>
             </ul>
         </footer>

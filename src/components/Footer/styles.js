@@ -22,5 +22,11 @@ export const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up(1050)]: {
             marginLeft: '4rem !important'
         }
+    },
+    footerIcon: {
+        cursor: 'pointer',
+        '&:hover': {
+            opacity: .8
+        }
     }
 }));

@@ -46,13 +46,20 @@ export const useStyles = makeStyles(theme => ({
             top: '15%'
         }
     },
+    heroContentButton: {
+        '&:hover': {
+            opacity: .8
+        },
+    },
     heroContentButtonText: {
         backgroundColor: '#000',
+        cursor: 'pointer',
         padding: '0.95rem 1.5rem',
         fontSize: '1rem'
     },
     heroContentButtonIcon: {
         backgroundColor: '#D5966C',
+        cursor: 'pointer',
         padding: '.95rem .95rem'
     },
     px: {

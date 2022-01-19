@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import { useStyles } from './styles';
 import { useBackground, useDisplay, useResponsive, useTypography } from '../../styles'
 import { Hidden, Typography } from '@mui/material';
+import { Link } from 'react-router-dom'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import yourDayAtGalleryImage from '../../assets/images/mobile/image-grid-1.jpg'
 import greetingImage1 from '../../assets/images/mobile/image-grid-2.jpg'
@@ -58,16 +59,18 @@ const Home = () => {
                             responsive.mdMt0)}>
                             The arts in the collection of the Modern Art Gallery all started from a spark of inspiration. Will these pieces inspire you? Visit us and find out.
                         </Typography>
-                        <button className={classNames(classes.heroContentButton, display.flex, display.alignStretch,
-                            display.outlineNone, display.borderNone, bg.transparent, display.mt1)}>
-                            <span className={classNames(classes.heroContentButtonText, text.textLight, text.uppercase,
-                                display.flex, display.alignCenter)}>
-                                Our location
-                            </span>
-                            <span className={classNames(classes.heroContentButtonIcon)}>
-                                <ArrowForwardIosIcon className={classNames(text.textLight)} />
-                            </span>
-                        </button>
+                        <Link to="/location" className={classNames(text.noUnderline)}>
+                            <button className={classNames(classes.heroContentButton, display.flex, display.alignStretch,
+                                display.outlineNone, display.borderNone, bg.transparent, display.mt1)}>
+                                <span className={classNames(classes.heroContentButtonText, text.textLight, text.uppercase,
+                                    display.flex, display.alignCenter)}>
+                                    Our location
+                                </span>
+                                <span className={classNames(classes.heroContentButtonIcon)}>
+                                    <ArrowForwardIosIcon className={classNames(text.textLight)} />
+                                </span>
+                            </button>
+                        </Link>
                     </div>
                 </section>
                 <section className={classNames(classes.dayAtGallery, display.justifyBetween, display.alignCenter,
