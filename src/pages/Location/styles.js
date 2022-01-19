@@ -2,6 +2,9 @@ import { makeStyles } from "@mui/styles";
 
 
 export const useStyles = makeStyles(theme => ({
+    mapContainer: {
+        height: 450
+    },
     location: {
         backgroundColor: '#000'
     },
