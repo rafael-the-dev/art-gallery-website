@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import { useStyles } from './styles';
 import { useBackground, useDisplay, useResponsive, useTypography } from '../../styles'
 import { Typography } from '@mui/material';
+import Footer from '../../components/Footer';
 
 
 const Location = () => {
@@ -19,7 +20,7 @@ const Location = () => {
                     <Typography component="h1" variant="h4"  className={classNames(classes.locationTitle, text.textLight)}>
                         Our location
                     </Typography>
-                    <div className={classNames(display.mt2)}>
+                    <div className={classNames(display.mt2, responsive.smMt0, classes.locationContent)}>
                         <Typography component="h2" variant="h6" className={classNames(classes.locationSubTitle)}>
                             99 king street
                         </Typography>
@@ -32,6 +33,7 @@ const Location = () => {
                     </div>
                 </section>
             </main>
+            <Footer />
         </>
     );
 };
